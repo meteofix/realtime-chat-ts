@@ -4,7 +4,7 @@ import {privateRoutes, publicRoutes} from "../routes";
 import {RoutePaths} from "../utils/consts";
 
 const AppRouter:FC = () => {
-    const user:boolean = true
+    const user:boolean = false
     return user ?
         (
             <Switch>
