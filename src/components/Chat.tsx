@@ -1,18 +1,13 @@
 import React, {FC, useContext, useState} from 'react';
 import {Context} from "../index";
 import {useAuthState} from "react-firebase-hooks/auth";
-import {Button, Container, Grid, TextField} from "@material-ui/core";
+import {Avatar, Button, Container, Grid, TextField} from "@material-ui/core";
 import {chatFrame, rootContainer, rootGridContainer, sendForm} from "./Chat.module.css";
 import {useCollectionData} from "react-firebase-hooks/firestore";
 import Loader from "./Loader";
 import firebase from 'firebase/compat';
+import { IUser} from "../types/types";
 
-interface IUser {
-    uid: string,
-    displayName: string,
-    photoURL: string,
-    email: string
-}
 
 const Chat: FC = () => {
     const {auth, firestore} = useContext(Context)
@@ -38,12 +33,15 @@ const Chat: FC = () => {
         return <Loader/>
     }
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <Container className={rootContainer} >
             <Grid container className={rootGridContainer}
                   style={{height: window.innerHeight - 70}}
             >
                 <div className={chatFrame}>
+                    {messages.map()}
                 </div>
                 <Grid container className={sendForm}>
                     <TextField
