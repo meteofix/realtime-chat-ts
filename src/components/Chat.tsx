@@ -1,10 +1,37 @@
-import React, {FC} from 'react';
+import React, {FC, useContext, useState} from 'react';
+import {Context} from "../index";
+import {useAuthState} from "react-firebase-hooks/auth";
+import {Button, Container, Grid, TextField} from "@material-ui/core";
+import {chatFrame, rootContainer, rootGridContainer, sendForm} from "./Chat.module.css";
+
 
 const Chat: FC = () => {
-    return (
-        <div>
+    const {auth, firestore} = useContext(Context)
+    const [user, loading, error]= useAuthState(auth)
+    const [value, setValue] = useState<string> ('')
 
-        </div>
+
+
+    return (
+        <Container className={rootContainer} >
+            <Grid container className={rootGridContainer}
+                  style={{height: window.innerHeight - 70}}
+            >
+                <div className={chatFrame}>
+                </div>
+                <Grid container className={sendForm}>
+                    <TextField
+                        fullWidth
+                        maxRows={2}
+                        variant={"outlined"}
+                        value={value}
+                        onChange={(e)=>setValue(e.target.value)}
+                        placeholder="Enter your message here"
+                    />
+                    <Button variant={"outlined"}>Send</Button>
+                </Grid>
+            </Grid>
+        </Container>
     );
 };
 

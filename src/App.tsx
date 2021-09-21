@@ -6,6 +6,8 @@ import './App.css'
 import {Context} from "./index";
 import {useAuthState} from "react-firebase-hooks/auth";
 import Loader from "./components/Loader";
+declare module "*.module.css";
+
 
 const App:FC = () => {
     const {auth} = useContext(Context)

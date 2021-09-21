@@ -1,5 +1,6 @@
 import React, {FC} from 'react';
 import {Container, Grid} from "@material-ui/core";
+import {ldsHourglass} from "./Loader.module.css";
 
 const Loader: FC = () => {
     return (
@@ -14,7 +15,7 @@ const Loader: FC = () => {
                       alignItems={"center"}
                       direction={"column"}
                 >
-                    <div className="lds-hourglass"></div>
+                    <div className={ldsHourglass}></div>
                 </Grid>
             </Grid>
         </Container>

@@ -1,0 +1,15 @@
+.rootGridContainer {
+    justify-content: center;;
+    margin-top: 20px;
+}
+.rootGridContainer .chatFrame {
+    width: 80%;
+    height: 70vh;
+    border: 1px solid gray;
+    overflow-y: auto;
+}
+.rootGridContainer .sendForm {
+    flex-direction: column;
+    align-items: flex-end;
+    width: 80%;
+}
