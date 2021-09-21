@@ -6,7 +6,7 @@ import 'firebase/firestore'
 import 'firebase/auth'
 
 
-const app = firebase.initializeApp({
+firebase.initializeApp({
     apiKey: "AIzaSyCTmG2VazPAq8sUuZyVt9z0tnfH8v3DXUA",
     authDomain: "realtime-chat-83a8b.firebaseapp.com",
     projectId: "realtime-chat-83a8b",
